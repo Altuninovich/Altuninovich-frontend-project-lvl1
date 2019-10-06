@@ -8,6 +8,6 @@ var g = function g(x, y) {
     return f(y, x);
   };
 };
-var f = "jora";
+
 var i = g(2, 3);
 console.log(i);
