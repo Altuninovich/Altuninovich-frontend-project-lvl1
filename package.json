@@ -1,0 +1,19 @@
+{
+  "name": "studyh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "brain-g": "src/bin/brain-g.js"
+  },
+  "scripts": {
+    "build": "babel src/bin -d dist --presets env -w "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0"
+  }
+}
