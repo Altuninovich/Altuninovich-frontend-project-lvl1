@@ -1,2 +1,4 @@
 # Altuninovich-frontend-project-lvl1
 [![Build Status](https://travis-ci.org/Altuninovich/Altuninovich-frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/Altuninovich/Altuninovich-frontend-project-lvl1)
+<a href="https://codeclimate.com/github/Altuninovich/Altuninovich-frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/2997339072439bf22b4a/maintainability" /></a>
+<a href="https://codeclimate.com/github/Altuninovich/Altuninovich-frontend-project-lvl1/test_coverage"><img src="https://api.codeclimate.com/v1/badges/2997339072439bf22b4a/test_coverage" /></a>
