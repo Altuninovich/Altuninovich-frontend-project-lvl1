@@ -1,2 +1,2 @@
-#!/usr/bin/env node
-import greeting from '..';
+//#!/usr/bin/env node
+//import {greeting} from '..';
