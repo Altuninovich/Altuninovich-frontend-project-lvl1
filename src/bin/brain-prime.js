@@ -1,5 +1,4 @@
 #!/usr/bin/env node
+import { startPrime } from '../games/prime';
 
-import prime from '../games/prime';
-
-prime();
+startPrime();
