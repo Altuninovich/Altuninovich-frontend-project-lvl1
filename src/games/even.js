@@ -13,7 +13,7 @@ const yesNo = (number) => {
 };
 console.log('Welcome to the Brain Games!');
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
-const yourName = readlineSync.question(' May I have your name?');
-console.log(`Hello,'${yourName}!`);
+const yourName = readlineSync.question(' May I have your name? ');
+console.log(`Hello, ${yourName}!`);
 export const yourName2 = yourName;
 export const startEven = () => start(2, randomNum, yesNo, yourName2);

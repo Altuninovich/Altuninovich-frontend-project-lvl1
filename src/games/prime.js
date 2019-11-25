@@ -22,7 +22,7 @@ const answer = (number) => {
 
 console.log('Welcome to the Brain Games!');
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-const yourName = readlineSync.question(' May I have your name?');
-console.log(`Hello,'${yourName}!`);
+const yourName = readlineSync.question(' May I have your name? ');
+console.log(`Hello, ${yourName}!`);
 export const yourName2 = yourName;
 export const startPrime = () => start(2, randomNum, answer, yourName2);

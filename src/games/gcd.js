@@ -17,7 +17,6 @@ const num2 = (str) => {
 };
 // в num1 получаем первое число
 const num1 = (str) => {
-// const i = length.str -1;
   let res = ' ';
   let x = 0;
   while (str[x] !== ' ') {
@@ -38,7 +37,7 @@ const answer = (str) => {
 };
 console.log('Welcome to the Brain Games!');
 console.log('Find the greatest common divisor of given numbers.');
-const yourName = readlineSync.question(' May I have your name?');
-console.log(`Hello,'${yourName}!`);
+const yourName = readlineSync.question(' May I have your name? ');
+console.log(`Hello, ${yourName}!`);
 export const yourName2 = yourName;
 export const startGcd = () => start(2, task, answer, yourName2);

@@ -31,7 +31,7 @@ const answer = (str) => {
 };
 console.log('Welcome to the Brain Games!');
 console.log('What number is missing in the progression?');
-const yourName = readlineSync.question(' May I have your name?');
-console.log(`Hello,'${yourName}!`);
+const yourName = readlineSync.question(' May I have your name? ');
+console.log(`Hello, ${yourName}!`);
 export const yourName2 = yourName;
 export const startProgression = () => start(2, progression, answer, yourName2);

@@ -1,7 +1,7 @@
 {
-  "name": "studyh1",
+  "name": "studyh2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Проект Brain Games от Hexlet",
   "main": "index.js",
   "bin": {
     "brain-g": "dist/bin/brain-g.js",
@@ -22,6 +22,7 @@
     "type": "git",
     "url": "git+https://github.com/Altuninovich/Altuninovich-frontend-project-lvl1"
   },
+  "author": "Altuninovich",
   "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.26.0",

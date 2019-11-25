@@ -18,7 +18,7 @@ const answer = (example) => String(eval(example));
 
 console.log('Welcome to the Brain Games!');
 console.log('What is the result of the expression?');
-const yourName = readlineSync.question('May I have your name?');
-console.log(`Hello,'${yourName}!`);
+const yourName = readlineSync.question('May I have your name? ');
+console.log(`Hello, ${yourName}!`);
 export const yourName2 = yourName;
 export const startCalc = () => start(2, task, answer, yourName2);
