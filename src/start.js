@@ -10,7 +10,7 @@ const start = (i, num, fun, yourName) => {
     if (i > 0) {
       return start(i - 1, num, fun, yourName);
     }
-    return console.log('Congratulations,'`${yourName}`);
+    return console.log(`${'Congratulations,'}${yourName}`);
   }
   return `'${set1} ${'is wrong answer ;(. Correct answer was'} '${resultf2}'.
 ${"Let's try again,"} ${yourName}`;

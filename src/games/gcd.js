@@ -41,4 +41,4 @@ console.log('Find the greatest common divisor of given numbers.');
 const yourName = readlineSync.question(' May I have your name?');
 console.log(`Hello,'${yourName}!`);
 export const yourName2 = yourName;
-export const startGcd = console.log(start(2, task, answer, yourName2));
+export const startGcd = () => start(2, task, answer, yourName2);

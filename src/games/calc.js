@@ -21,4 +21,4 @@ console.log('What is the result of the expression?');
 const yourName = readlineSync.question('May I have your name?');
 console.log(`Hello,'${yourName}!`);
 export const yourName2 = yourName;
-export const startCalc = console.log(start(2, task, answer, yourName2));
+export const startCalc = () => start(2, task, answer, yourName2);
