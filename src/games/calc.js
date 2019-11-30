@@ -1,9 +1,10 @@
 import start from '../start';
 
-const readlineSync = require('readline-sync');
+import { cons } from '../cons';
 
-const randomNum = () => Math.ceil(Math.random() * 100);
-// получаем случайное целое число
+import { randomNum } from '../utils';
+
+const instruction = 'What is the result of the expression?';
 // в task отображаем примеры
 const task = () => {
   const i = randomNum();
@@ -14,11 +15,9 @@ const task = () => {
   }
   return `${randomNum()}${'*'}${randomNum()}`;
 };
-const answer = (example) => String(eval(example));
-
-console.log('Welcome to the Brain Games!');
-console.log('What is the result of the expression?');
-const yourName = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${yourName}!`);
-export const yourName2 = yourName;
-export const startCalc = () => start(2, task, answer, yourName2);
+const questionAnswer = () => {
+  const question = task();
+  const answer = String(eval(question));
+  return cons(question, answer);
+};
+export default () => start(instruction, questionAnswer);

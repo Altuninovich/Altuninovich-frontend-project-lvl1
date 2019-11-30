@@ -1,18 +1,24 @@
 import readlineS from 'readline-sync';
 
-const start = (i, num, fun, yourName) => {
-  const resultf1 = num();
-  const resultf2 = fun(resultf1);
-  console.log(`${'Question: '}${resultf1}`);
-  const yourAnswer = readlineS.question('Your answer: ');
-  if (resultf2 === yourAnswer) {
-    console.log('Correct!');
-    if (i > 0) {
-      return start(i - 1, num, fun, yourName);
-    }
-    return console.log(`${'Congratulations,'} ${yourName}!`);
-  }
-  return console.log(`'${yourAnswer}' ${'is wrong answer ;(. Correct answer was'} '${resultf2}'.
+import { car, cdr } from './cons';
+
+const start = (instruction, fun) => {
+  let i = 3;
+  console.log('Welcome to the Brain Games!');
+  console.log(instruction);
+  const yourName = readlineS.question(' May I have your name? ');
+  console.log(`Hello, ${yourName}!`);
+  while (i > 0) {
+    i -= 1;
+    const questionAnswer = fun();
+    console.log(`${'Question: '}${car(questionAnswer)}`);
+    const yourAnswer = readlineS.question('Your answer: ');
+    if (cdr(questionAnswer) !== yourAnswer) {
+      return console.log(`'${yourAnswer}' ${'is wrong answer ;(. Correct answer was'} '${cdr(questionAnswer)}'.
   ${"Let's try again,"} ${yourName}!`);
+    }
+    console.log('Correct!');
+  }
+  return console.log(`${'Congratulations,'} ${yourName}!`);
 };
 export default start;

@@ -1,19 +1,14 @@
 import start from '../start';
 
-const readlineSync = require('readline-sync');
+import { cons } from '../cons';
 
-const randomNum = () => Math.ceil(Math.random() * 100);
-// получаем случайное целое число
-// получаем 'no' если нечетное, 'yes' если четноe
-const yesNo = (number) => {
-  if (number % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
+import { randomNum } from '../utils';
+
+const instruction = 'Answer "yes" if the number is even, otherwise answer "no".';
+// получаем конструктор с вопросом и ответом
+const even = () => {
+  const randomNum2 = randomNum();
+  const answer = randomNum2 % 2 === 0 ? 'yes' : 'no';
+  return cons(randomNum2, answer);
 };
-console.log('Welcome to the Brain Games!');
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-const yourName = readlineSync.question(' May I have your name? ');
-console.log(`Hello, ${yourName}!`);
-export const yourName2 = yourName;
-export const startEven = () => start(2, randomNum, yesNo, yourName2);
+export default () => start(instruction, even);

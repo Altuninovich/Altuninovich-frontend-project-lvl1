@@ -1,28 +1,28 @@
 import start from '../start';
 
-const readlineSync = require('readline-sync');
+import { cons } from '../cons';
 
-const randomNum = () => Math.ceil(Math.random() * 100);
-// В answer получаем yes если простое число , no если не простое
-const answer = (number) => {
+import { randomNum } from '../utils';
+
+const instruction = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+const prime = (number) => {
   if (number < 2) {
     return false;
   }
   const iter = (num, divider) => {
     if (num % divider === 0) {
-      return 'no';
+      return false;
     }
     if (num / 2 <= divider) {
-      return 'yes';
+      return true;
     }
     return iter(number, divider + 1);
   };
   return iter(number, 2);
 };
-
-console.log('Welcome to the Brain Games!');
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-const yourName = readlineSync.question(' May I have your name? ');
-console.log(`Hello, ${yourName}!`);
-export const yourName2 = yourName;
-export const startPrime = () => start(2, randomNum, answer, yourName2);
+const answer = () => {
+  const num = randomNum();
+  const yesNo = prime(num) ? 'yes' : 'no';
+  return cons(num, yesNo);
+};
+export default () => start(instruction, answer);
