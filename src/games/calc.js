@@ -2,22 +2,28 @@ import start from '../start';
 
 import { cons } from '../cons';
 
-import { randomNum } from '../utils';
+import { randomNum, getRandomNum } from '../utils';
 
 const instruction = 'What is the result of the expression?';
-// в task отображаем примеры
-const task = () => {
-  const i = randomNum();
-  if (i % 3 === 0) {
-    return `${randomNum()}${'-'}${randomNum()}`;
-  } if (i % 3 === 1) {
-    return `${randomNum()}${'+'}${randomNum()}`;
+const calc = () => {
+  const num1 = randomNum();
+  const num2 = randomNum();
+  const operator = ['-', '+', '*'];
+  const numOperator = getRandomNum(0, 2);
+  let question;
+  switch (numOperator) {
+    case 0:
+      question = num1 - num2;
+      break;
+    case 1:
+      question = num1 + num2;
+      break;
+    case 2:
+      question = num1 * num2;
+      break;
+    default:
+      question = 'ups';
   }
-  return `${randomNum()}${'*'}${randomNum()}`;
+  return cons(`${num1} ${operator[numOperator]} ${num2}`, String(question));
 };
-const questionAnswer = () => {
-  const question = task();
-  const answer = String(eval(question));
-  return cons(question, answer);
-};
-export default () => start(instruction, questionAnswer);
+export default () => start(instruction, calc);
