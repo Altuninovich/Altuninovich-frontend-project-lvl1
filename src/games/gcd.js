@@ -1,19 +1,20 @@
+import { cons } from 'hexlet-pairs';
+
+import getRandomNum from '../utils';
+
 import start from '../start';
-
-import { cons } from '../cons';
-
-import { randomNum } from '../utils';
 
 const instruction = 'Find the greatest common divisor of given numbers.';
 
-const answer = () => {
-  const num1 = randomNum();
-  const num2 = randomNum();
+const getResultGames = () => {
+  const num1 = getRandomNum(0, 100);
+  const num2 = getRandomNum(0, 100);
   const task = `${num1} ${num2}`;
-  let res = num1 > num2 ? num1 : num2;
-  while (num1 % res !== 0 || num2 % res !== 0) {
-    res -= 1;
+  let result = num1 > num2 ? num1 : num2;
+  while (num1 % result !== 0 || num2 % result !== 0) {
+    result -= 1;
   }
-  return cons(task, String(res));
+  const answer = String(result);
+  return cons(task, answer);
 };
-export default () => start(instruction, answer);
+export default () => start(instruction, getResultGames);

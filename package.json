@@ -28,6 +28,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
+	"hexlet-pairs": "^1.0.8",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {

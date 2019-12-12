@@ -1,11 +1,11 @@
+import { cons } from 'hexlet-pairs';
+
+import getRandomNum from '../utils';
+
 import start from '../start';
 
-import { cons } from '../cons';
-
-import { getRandomNum } from '../utils';
-
 const instruction = 'What number is missing in the progression?';
-const progression = () => {
+const getResultGames = () => {
   let missedNumber;
   let res = '';
   let begin = getRandomNum(1, 69);
@@ -22,6 +22,7 @@ const progression = () => {
     begin += pass;
     res = `${res} ${begin}`;
   }
-  return cons(res, String(missedNumber));
+  const answer = String(missedNumber);
+  return cons(res, answer);
 };
-export default () => start(instruction, progression);
+export default () => start(instruction, getResultGames);

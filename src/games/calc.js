@@ -1,29 +1,32 @@
+import { cons } from 'hexlet-pairs';
+
+import getRandomNum from '../utils';
+
 import start from '../start';
 
-import { cons } from '../cons';
-
-import { randomNum, getRandomNum } from '../utils';
-
 const instruction = 'What is the result of the expression?';
-const calc = () => {
-  const num1 = randomNum();
-  const num2 = randomNum();
-  const operator = ['-', '+', '*'];
-  const numOperator = getRandomNum(0, 2);
-  let question;
+const operations = ['-', '+', '*'];
+const lengthArray = operations.length - 1;
+const getResultGames = () => {
+  const num1 = getRandomNum(0, 100);
+  const num2 = getRandomNum(0, 100);
+  const numOperator = getRandomNum(0, lengthArray);
+  let results;
   switch (numOperator) {
     case 0:
-      question = num1 - num2;
+      results = num1 - num2;
       break;
     case 1:
-      question = num1 + num2;
+      results = num1 + num2;
       break;
     case 2:
-      question = num1 * num2;
+      results = num1 * num2;
       break;
     default:
-      question = 'ups';
+      results = 'null';
   }
-  return cons(`${num1} ${operator[numOperator]} ${num2}`, String(question));
+  const question = `${num1} ${operations[numOperator]} ${num2}`;
+  const answer = String(results);
+  return cons(question, answer);
 };
-export default () => start(instruction, calc);
+export default () => start(instruction, getResultGames);

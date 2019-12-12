@@ -1,15 +1,13 @@
 import readlineS from 'readline-sync';
 
-import { car, cdr } from './cons';
+import { car, cdr } from 'hexlet-pairs';
 
 const start = (instruction, fun) => {
-  let i = 3;
   console.log('Welcome to the Brain Games!');
   console.log(instruction);
   const yourName = readlineS.question(' May I have your name? ');
   console.log(`Hello, ${yourName}!`);
-  while (i > 0) {
-    i -= 1;
+  for (let i = 4; i > 0; i -= 1) {
     const questionAnswer = fun();
     console.log(`${'Question: '}${car(questionAnswer)}`);
     const yourAnswer = readlineS.question('Your answer: ');

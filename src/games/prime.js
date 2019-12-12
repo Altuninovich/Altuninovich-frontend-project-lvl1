@@ -1,11 +1,11 @@
+import { cons } from 'hexlet-pairs';
+
+import getRandomNum from '../utils';
+
 import start from '../start';
 
-import { cons } from '../cons';
-
-import { randomNum } from '../utils';
-
 const instruction = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-const prime = (number) => {
+const getPrimeNum = (number) => {
   if (number < 2) {
     return false;
   }
@@ -20,9 +20,9 @@ const prime = (number) => {
   };
   return iter(number, 2);
 };
-const answer = () => {
-  const num = randomNum();
-  const yesNo = prime(num) ? 'yes' : 'no';
-  return cons(num, yesNo);
+const getResultGames = () => {
+  const question = getRandomNum(0, 100);
+  const answer = getPrimeNum(question) ? 'yes' : 'no';
+  return cons(question, answer);
 };
-export default () => start(instruction, answer);
+export default () => start(instruction, getResultGames);
