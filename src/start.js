@@ -1,6 +1,6 @@
 import readlineS from 'readline-sync';
 
-import { car, cdr } from 'hexlet-pairs';
+import { car, cdr } from '@hexlet/pairs';
 
 const start = (instruction, fun) => {
   console.log('Welcome to the Brain Games!!');
