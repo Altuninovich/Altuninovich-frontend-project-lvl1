@@ -6,11 +6,11 @@ import start from '../start';
 
 const instruction = 'What is the result of the expression?';
 const operations = ['-', '+', '*'];
-const lengthArray = operations.length - 1;
+const lengthArrayOperations = operations.length - 1;
 const getResultGames = () => {
   const num1 = getRandomNum(0, 100);
   const num2 = getRandomNum(0, 100);
-  const numOperator = getRandomNum(0, lengthArray);
+  const numOperator = getRandomNum(0, lengthArrayOperations);
   let results;
   switch (numOperator) {
     case 0:

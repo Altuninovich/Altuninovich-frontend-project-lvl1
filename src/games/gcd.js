@@ -6,15 +6,19 @@ import start from '../start';
 
 const instruction = 'Find the greatest common divisor of given numbers.';
 
-const getResultGames = () => {
-  const num1 = getRandomNum(0, 100);
-  const num2 = getRandomNum(0, 100);
-  const task = `${num1} ${num2}`;
-  let result = num1 > num2 ? num1 : num2;
-  while (num1 % result !== 0 || num2 % result !== 0) {
-    result -= 1;
+const getGreatestDivisor = (a, b) => {
+  if (b === 0) {
+    return a;
   }
-  const answer = String(result);
-  return cons(task, answer);
+  return getGreatestDivisor(b, a % b);
+};
+
+const getResultGames = () => {
+  const firstRundonNum = getRandomNum(1, 100);
+  const secondRundomNum = getRandomNum(1, 100);
+  const question = `${firstRundonNum} ${secondRundomNum}`;
+  const answer = `${getGreatestDivisor(firstRundonNum, secondRundomNum)}`;
+
+  return cons(question, answer);
 };
 export default () => start(instruction, getResultGames);

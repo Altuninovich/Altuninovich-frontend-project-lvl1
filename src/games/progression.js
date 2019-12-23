@@ -5,24 +5,25 @@ import getRandomNum from '../utils';
 import start from '../start';
 
 const instruction = 'What number is missing in the progression?';
+const progressionLength = 10;
+
 const getResultGames = () => {
-  let missedNumber;
-  let res = '';
-  let begin = getRandomNum(1, 69);
-  const end = begin + 20;
-  const pass = 2;
-  let passPosition = getRandomNum(1, 9);
-  while (begin < end) {
-    if (passPosition === 0) {
-      res = `${res} ${'..'}`;
-      begin += pass;
-      missedNumber = begin;
+  const begin = getRandomNum(1, 99);
+  const step = getRandomNum(1, 10);
+  const hideElementPosition = getRandomNum(0, progressionLength - 1);
+  const correctAnswer = begin + hideElementPosition * step;
+
+  let progression = '';
+
+  for (let score = 0; score < progressionLength; score += 1) {
+    const checkPoint = begin + step * score;
+    if (score === hideElementPosition) {
+      progression += '.. ';
+    } else {
+      progression += `${checkPoint} `;
     }
-    passPosition -= 1;
-    begin += pass;
-    res = `${res} ${begin}`;
   }
-  const answer = String(missedNumber);
-  return cons(res, answer);
+  const answer = String(correctAnswer);
+  return cons(progression, answer);
 };
 export default () => start(instruction, getResultGames);
