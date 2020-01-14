@@ -12,12 +12,12 @@ const start = (instruction, fun) => {
     console.log(`${'Question: '}${car(gameData)}`);
     const yourAnswer = readlineS.question('Your answer: ');
     if (cdr(gameData) !== yourAnswer) {
-      return console.log(`'${yourAnswer}' ${'is wrong answer ;(. Correct answer was'} '${cdr(gameData)}'.
-  ${"Let's try again,"} ${yourName}!`);
+      console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${cdr(gameData)}'.
+  Let's try again, ${yourName}!`);
+      return;
     }
     console.log('Correct!');
   }
   console.log(`Congratulations ${yourName}!`);
-  return;
 };
 export default start;
