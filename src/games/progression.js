@@ -7,7 +7,7 @@ import start from '../start';
 const instruction = 'What number is missing in the progression?';
 const progressionLength = 10;
 
-const getResultGames = () => {
+const getDataForGames = () => {
   const begin = getRandomNum(1, 99);
   const step = getRandomNum(1, 10);
   const hideElementPosition = getRandomNum(0, progressionLength - 1);
@@ -18,12 +18,12 @@ const getResultGames = () => {
   for (let score = 0; score < progressionLength; score += 1) {
     const checkPoint = begin + step * score;
     if (score === hideElementPosition) {
-      progression += '.. ';
+      progression = `${progression} ${'..'}`;
     } else {
-      progression += `${checkPoint} `;
+      progression = `${progression} ${checkPoint}`;
     }
   }
   const answer = String(correctAnswer);
   return cons(progression, answer);
 };
-export default () => start(instruction, getResultGames);
+export default () => start(instruction, getDataForGames);

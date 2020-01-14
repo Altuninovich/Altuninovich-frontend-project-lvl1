@@ -5,7 +5,7 @@ import getRandomNum from '../utils';
 import start from '../start';
 
 const instruction = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-const getPrimeNum = (number) => {
+const isPrimeNum = (number) => {
   if (number < 2) {
     return false;
   }
@@ -20,9 +20,9 @@ const getPrimeNum = (number) => {
   };
   return iter(number, 2);
 };
-const getResultGames = () => {
+const getDataForGames = () => {
   const question = getRandomNum(0, 100);
-  const answer = getPrimeNum(question) ? 'yes' : 'no';
+  const answer = isPrimeNum(question) ? 'yes' : 'no';
   return cons(question, answer);
 };
-export default () => start(instruction, getResultGames);
+export default () => start(instruction, getDataForGames);

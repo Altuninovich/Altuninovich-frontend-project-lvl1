@@ -7,16 +7,17 @@ const start = (instruction, fun) => {
   console.log(instruction);
   const yourName = readlineS.question(' May I have your name? ');
   console.log(`Hello, ${yourName}!`);
-  for (let i = 3; i > 0; i -= 1) {
-    const questionAnswer = fun();
-    console.log(`${'Question: '}${car(questionAnswer)}`);
+  for (let i = 0; i < 3; i += 1) {
+    const gameData = fun();
+    console.log(`${'Question: '}${car(gameData)}`);
     const yourAnswer = readlineS.question('Your answer: ');
-    if (cdr(questionAnswer) !== yourAnswer) {
-      return console.log(`'${yourAnswer}' ${'is wrong answer ;(. Correct answer was'} '${cdr(questionAnswer)}'.
+    if (cdr(gameData) !== yourAnswer) {
+      return console.log(`'${yourAnswer}' ${'is wrong answer ;(. Correct answer was'} '${cdr(gameData)}'.
   ${"Let's try again,"} ${yourName}!`);
     }
     console.log('Correct!');
   }
-  return console.log(`${'Congratulations,'} ${yourName}!`);
+  console.log(`Congratulations ${yourName}!`);
+  return;
 };
 export default start;

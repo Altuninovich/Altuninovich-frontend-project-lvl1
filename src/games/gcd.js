@@ -13,12 +13,12 @@ const getGreatestDivisor = (a, b) => {
   return getGreatestDivisor(b, a % b);
 };
 
-const getResultGames = () => {
-  const firstRundonNum = getRandomNum(1, 100);
-  const secondRundomNum = getRandomNum(1, 100);
-  const question = `${firstRundonNum} ${secondRundomNum}`;
-  const answer = `${getGreatestDivisor(firstRundonNum, secondRundomNum)}`;
+const getDataForGames = () => {
+  const firstRandonNum = getRandomNum(1, 100);
+  const secondRandomNum = getRandomNum(1, 100);
+  const question = `${firstRandonNum} ${secondRandomNum}`;
+  const answer = `${getGreatestDivisor(firstRandonNum, secondRandomNum)}`;
 
   return cons(question, answer);
 };
-export default () => start(instruction, getResultGames);
+export default () => start(instruction, getDataForGames);
