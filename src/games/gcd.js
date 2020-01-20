@@ -17,7 +17,7 @@ const getDataForGame = () => {
   const firstRandonNum = getRandomNum(1, 100);
   const secondRandomNum = getRandomNum(1, 100);
   const question = `${firstRandonNum} ${secondRandomNum}`;
-  const answer = toString(getGreatestDivisor(firstRandonNum, secondRandomNum));
+  const answer = String(getGreatestDivisor(firstRandonNum, secondRandomNum));
 
   return cons(question, answer);
 };

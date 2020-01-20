@@ -7,6 +7,15 @@ https://asciinema.org/a/GZLcnSobmK9CpJDBJ8zRjoxwv
 https://asciinema.org/a/ABZJ2syYmaxwbHXt9zoaIfUtF
 https://asciinema.org/a/nkuKxPBBrlBIT8UtasO7fQISJ
 
+A series of five console mini-games.
+For install: npm install -g brain-games-altunin
+Running games with teams:
+1) brain-even
+2) brain-calc
+3) brain-gcd
+5) brain-progression
+6) brain-prime 
+
 #Игра "Проверка на чётность". Суть игры в следующем: пользователю показывается случайное число.
 И ему нужно ответить yes, если число чётное, или no — если нечётное:
 Пример игры:
@@ -42,6 +51,8 @@ Correct!
 Игрок должен определить пропущенное число.
 Пример игры:
 Question: 5 7 9 11 13 .. 17 19 21 23
+Your answer: 15
+Correct!
 
 Игра "Простое ли число?"
 Пример игры:
