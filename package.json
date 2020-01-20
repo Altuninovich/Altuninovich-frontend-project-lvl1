@@ -2,7 +2,6 @@
   "name": "studyh2",
   "version": "1.0.0",
   "description": "Проект Brain Games от Hexlet",
-  "main": "index.js",
   "bin": {
     "brain-g": "dist/bin/brain-g.js",
 	"brain-even": "dist/bin/brain-even.js",
@@ -20,6 +19,14 @@
   ],
   "author": "Altuninovich",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Altuninovich/Altuninovich-frontend-project-lvl1"
+  },
+  "keywords": [
+    "Brain Games",
+    "Altuninovich-frontend-project-lvl1"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",

@@ -2,12 +2,12 @@ import { cons } from '@hexlet/pairs';
 
 import getRandomNum from '../utils';
 
-import start from '../start';
+import start from '../play';
 
 const instruction = 'What is the result of the expression?';
 const operations = ['-', '+', '*'];
 const highestValueRandomNum = operations.length - 1;
-const getDataForGames = () => {
+const getDataForGame = () => {
   const num1 = getRandomNum(0, 100);
   const num2 = getRandomNum(0, 100);
   const operatorNumber = getRandomNum(0, highestValueRandomNum);
@@ -24,10 +24,10 @@ const getDataForGames = () => {
       result = num1 * num2;
       break;
     default:
-      return 'null';
+      return null;
   }
   const question = `${num1} ${operator} ${num2}`;
   const answer = String(result);
   return cons(question, answer);
 };
-export default () => start(instruction, getDataForGames);
+export default () => start(instruction, getDataForGame);

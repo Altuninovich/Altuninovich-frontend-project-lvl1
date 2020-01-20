@@ -7,13 +7,16 @@ const start = (instruction, fun) => {
   console.log(instruction);
   const yourName = readlineS.question(' May I have your name? ');
   console.log(`Hello, ${yourName}!`);
-  for (let i = 0; i < 3; i += 1) {
-    const gameData = fun();
-    console.log(`${'Question: '}${car(gameData)}`);
+  const numberOfRounds = 3;
+  for (let i = 0; i < numberOfRounds; i += 1) {
+    const dataForTheGameQuestionAnswer = fun();
+    const question = car(dataForTheGameQuestionAnswer);
+    const answer = cdr(dataForTheGameQuestionAnswer);
+    console.log(`Question: ${question}`);
     const yourAnswer = readlineS.question('Your answer: ');
-    if (cdr(gameData) !== yourAnswer) {
-      console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${cdr(gameData)}'.
-  Let's try again, ${yourName}!`);
+    if (answer !== yourAnswer) {
+      console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
+      console.log(`Let's try again, ${yourName}!`);
       return;
     }
     console.log('Correct!');
