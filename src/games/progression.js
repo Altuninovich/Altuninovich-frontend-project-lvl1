@@ -18,7 +18,7 @@ const getDataForGame = () => {
   for (let score = 0; score < progressionLength; score += 1) {
     const checkPoint = begin + step * score;
     if (score === hideElementPosition) {
-      question = `${question} ${'..'}`;
+      question = `${question} ..`;
     } else {
       question = `${question} ${checkPoint}`;
     }
